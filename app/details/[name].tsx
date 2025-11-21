@@ -6,7 +6,7 @@ export default function Details() {
   const { name } = useLocalSearchParams();
   return (
     <View style={{ flex: 1 }}>
-      <Text>Hello World Details Pokemon {name}</Text>
+      <Text>Pokemon {name}</Text>
     </View>
   );
 }

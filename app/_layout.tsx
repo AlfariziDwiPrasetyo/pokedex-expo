@@ -18,7 +18,10 @@ export default function RootLayout() {
           const formatted =
             pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1);
 
-          return { title: `${formatted}` };
+          return {
+            title: `${formatted}`,
+            presentation: "pageSheet",
+          };
         }}
       />
     </Stack>
