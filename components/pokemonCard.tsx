@@ -1,8 +1,11 @@
+import { useRouter } from "expo-router";
 import React, { useRef } from "react";
 import { Animated, Image, Pressable, Text, View } from "react-native";
 
 const PokemonCard = ({ pokemon, bgColor }: any) => {
-  // Animated scale (aman sekarang)
+  const router = useRouter();
+
+  // Animated scale
   const scaleAnim = useRef(new Animated.Value(1)).current;
 
   const onPressIn = () => {
@@ -31,6 +34,12 @@ const PokemonCard = ({ pokemon, bgColor }: any) => {
       <Pressable
         onPressIn={onPressIn}
         onPressOut={onPressOut}
+        onPress={() =>
+          router.push({
+            pathname: "/details/[name]",
+            params: { name: pokemon.name },
+          })
+        }
         style={{
           backgroundColor: bgColor,
           padding: 16,
